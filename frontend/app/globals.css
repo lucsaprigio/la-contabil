@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ──────────────────────────────────────────── */
+:root {
+  /* Dark theme (default) */
+  --c-bg:           #0f172a;
+  --c-surface:      #1e293b;
+  --c-surface-2:    #263248;
+  --c-fg:           #f8fafc;
+  --c-fg-muted:     #94a3b8;
+  --c-fg-subtle:    #64748b;
+  --c-border:       rgba(255, 255, 255, 0.08);
+  --c-overlay:      rgba(255, 255, 255, 0.04);
+  --c-overlay-md:   rgba(255, 255, 255, 0.08);
+  --c-input:        rgba(255, 255, 255, 0.05);
+  --c-glass-bg:     rgba(255, 255, 255, 0.04);
+  --c-glass-strong: rgba(255, 255, 255, 0.07);
+  --c-scrollbar:    rgba(124, 58, 237, 0.4);
+}
+
+[data-theme="light"] {
+  --c-bg:           #f1f5f9;
+  --c-surface:      #ffffff;
+  --c-surface-2:    #f8fafc;
+  --c-fg:           #0f172a;
+  --c-fg-muted:     #64748b;
+  --c-fg-subtle:    #94a3b8;
+  --c-border:       rgba(0, 0, 0, 0.08);
+  --c-overlay:      rgba(0, 0, 0, 0.03);
+  --c-overlay-md:   rgba(0, 0, 0, 0.06);
+  --c-input:        rgba(0, 0, 0, 0.04);
+  --c-glass-bg:     rgba(255, 255, 255, 0.75);
+  --c-glass-strong: rgba(255, 255, 255, 0.9);
+  --c-scrollbar:    rgba(124, 58, 237, 0.3);
+}
+
+/* ─── Tailwind Theme ─────────────────────────────────────────── */
+@theme inline {
+  /* Accent (fixed, same in both themes) */
+  --color-primary:         #7c3aed;
+  --color-primary-hover:   #6d28d9;
+  --color-secondary:       #06b6d4;
+  --color-secondary-hover: #0891b2;
+  --color-success:         #22c55e;
+  --color-warning:         #f59e0b;
+  --color-danger:          #ef4444;
+
+  /* Themed — resolves from CSS vars */
+  --color-bg:       var(--c-bg);
+  --color-surface:  var(--c-surface);
+  --color-surface2: var(--c-surface-2);
+  --color-fg:       var(--c-fg);
+  --color-muted:    var(--c-fg-muted);
+  --color-subtle:   var(--c-fg-subtle);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ─── Base ───────────────────────────────────────────────────── */
+*, *::before, *::after {
+  border-color: var(--c-border);
+}
+
+body {
+  background-color: var(--c-bg);
+  color: var(--c-fg);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ─── Glassmorphism ──────────────────────────────────────────── */
+.glass {
+  background: var(--c-glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--c-border);
+}
+
+.glass-strong {
+  background: var(--c-glass-strong);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--c-border);
+}
+
+/* ─── Gradient text ──────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--c-scrollbar);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(124, 58, 237, 0.7); }
