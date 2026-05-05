@@ -1,0 +1,14 @@
+{
+	"name": "spdc-api-vcl",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "./src",
+	"projects": [],
+	"dependencies": {
+		"github.com/hashload/horse": "^3.1.9",
+		"github.com/hashload/horse-jwt": "^2.0.18",
+		"github.com/paolo-rossi/delphi-jose-jwt": "^v3.3.1",
+		"github.com/viniciussanchez/dataset-serialize": "^v2.5.9"
+	}
+}

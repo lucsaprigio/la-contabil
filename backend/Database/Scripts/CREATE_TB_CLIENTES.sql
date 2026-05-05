@@ -1,0 +1,44 @@
+USE [LAC_DATABASE]
+GO
+
+/****** Object:  Table [dbo].[TB_CLIENTES]    Script Date: 09/03/2026 21:31:26 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[TB_CLIENTES](
+	[ID] [uniqueidentifier] NOT NULL,
+	[BUSINESS_ID] [uniqueidentifier] NULL,
+	[NOME_RAZAO] [varchar](150) NOT NULL,
+	[NOME_FANTASIA] [varchar](150) NULL,
+	[CPF_CNPJ] [varchar](14) NOT NULL,
+	[IE] [varchar](20) NULL,
+	[EMAIL] [varchar](100) NULL,
+	[TELEFONE] [varchar](20) NULL,
+	[LOGRADOURO] [varchar](100) NULL,
+	[NUMERO] [varchar](10) NULL,
+	[COMPLEMENTO] [varchar](60) NULL,
+	[BAIRRO] [varchar](60) NULL,
+	[CIDADE_CODIGO] [int] NULL,
+	[CIDADE_NOME] [varchar](60) NULL,
+	[UF] [char](2) NULL,
+	[CEP] [varchar](8) NULL,
+	[ATIVO] [char](1) NULL,
+	[DATA_CADASTRO] [datetime] NULL,
+	[PESSOA] [varchar](1) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[TB_CLIENTES] ADD  DEFAULT ('S') FOR [ATIVO]
+GO
+
+ALTER TABLE [dbo].[TB_CLIENTES] ADD  DEFAULT (getdate()) FOR [DATA_CADASTRO]
+GO
+
+

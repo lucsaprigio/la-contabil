@@ -1,0 +1,2 @@
+[2026-02-17 08:56:58] Object factory for class {3E9B315B-F456-4175-A864-B2573C4A2201} is missing. To register it, you can drop component [TFDGUIxWaitCursor] into your project
+[2026-02-17 08:58:45] Object factory for class {3E9B315B-F456-4175-A864-B2573C4A2201} is missing. To register it, you can drop component [TFDGUIxWaitCursor] into your project
